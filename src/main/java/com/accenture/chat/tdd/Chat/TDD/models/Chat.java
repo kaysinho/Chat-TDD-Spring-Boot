@@ -4,20 +4,31 @@ import java.util.Date;
 import java.util.List;
 
 public class Chat {
-    private Date date;
+    private Date createDate;
     private List<Message> messages;
 
     public Chat(Date _date, List<Message> messages){
-        this.date = _date;
+        this.createDate = _date;
         this.messages = messages;
     }
 
-    public Date getDate() {
-        return date;
+    public Boolean filterChatByKeywords(String word){
+
+        for(Message msg : messages){
+            if (msg.getDescription().contains(word)){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
     }
 
     public void setDate(Date date) {
-        this.date = date;
+        this.createDate = date;
     }
 
     public List<Message> getMessages() {

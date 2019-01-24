@@ -1,5 +1,6 @@
 package com.accenture.chat.tdd.Chat.TDD.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Message {
@@ -11,6 +12,13 @@ public class Message {
         this.date = _date;
         this.description = _description;
         this.user = _user;
+    }
+
+    public boolean filterUser(String user){
+        if (this.user == user){
+            return  true;
+        }
+        return false;
     }
 
     public Date getDate() {

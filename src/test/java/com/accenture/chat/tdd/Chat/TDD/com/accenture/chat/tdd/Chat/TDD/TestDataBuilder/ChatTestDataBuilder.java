@@ -8,15 +8,15 @@ import java.util.Date;
 import java.util.List;
 
 public class ChatTestDataBuilder {
-    private Date date;
+    private Date createDate;
     private List<Message> messages;
 
     public ChatTestDataBuilder(){
-        date = new Date();
+        createDate = new Date();
     }
 
     public ChatTestDataBuilder withDate(Date date){
-        this.date = date;
+        this.createDate = date;
         return  this;
     }
 
@@ -31,7 +31,7 @@ public class ChatTestDataBuilder {
     }
 
     public Chat build(){
-        return  new Chat(this.date, this.messages);
+        return  new Chat(this.createDate, this.messages);
     }
 
     public static ChatTestDataBuilder aChat(){
